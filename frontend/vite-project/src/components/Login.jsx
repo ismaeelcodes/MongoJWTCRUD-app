@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 
 const Login = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate()
 
@@ -13,12 +13,8 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/login', { username, password });
-      const token = response.data.token;
-
-      // Store token in localStorage or state for future API requests
-      localStorage.setItem('token', token);
-
+      const response = await axios.post('http://localhost:5000/api/users/login', { email, password });
+      localStorage.setItem("accessToken", response.data.accessToken)
       navigate('/home')
     } catch (error) {
       console.error('Login error:', error);
@@ -31,9 +27,9 @@ const Login = () => {
       <form onSubmit={handleSubmit} className="login-form">
         <input
           type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           className="login-input"
         />
         <input

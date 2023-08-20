@@ -5,16 +5,14 @@ import { Link } from 'react-router-dom'
 
 const Register = () => {
   const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/register', { username, password });
-      const token = response.data.token;
-
-      // Store token in localStorage or state for future API requests
-      localStorage.setItem('token', token);
+      const response = await axios.post('http://localhost:5000/api/users/register', { username, email, password });
+      console.log(response)
     } catch (error) {
       console.error('Registration error:', error);
     }
@@ -29,6 +27,13 @@ const Register = () => {
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          className="register-input"
+        />
+         <input
+          type="text"
+          placeholder="Username"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           className="register-input"
         />
         <input
