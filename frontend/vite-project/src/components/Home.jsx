@@ -5,8 +5,9 @@ import '../App.css';
 import TaskList from './TaskList';
 
 function App() {
+  const user_id = localStorage.getItem("id")
   const [tasks, setTasks] = useState([]);
-  const [newTask, setNewTask] = useState({ title: '', description: '', completed: false });
+  const [newTask, setNewTask] = useState({ user_id, title: '', description: '', completed: false });
 
   useEffect(() => {
     fetchTasks();

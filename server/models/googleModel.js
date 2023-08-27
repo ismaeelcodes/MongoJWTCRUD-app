@@ -1,11 +1,10 @@
 const mongoose = require("mongoose");
-const jwt = require("jsonwebtoken");
 
 
 
-const userSchema = mongoose.Schema(
+const googleUserModel = mongoose.Schema(
   {
-    username: {
+    name: {
       type: String,
       required: [true, "Please add the user name"],
     },
@@ -13,10 +12,6 @@ const userSchema = mongoose.Schema(
       type: String,
       required: [true, "Please add the user email address"],
       unique: [true, "Email address already taken"],
-    },
-    password: {
-      type: String,
-      required: [true, "Please add the user password"],
     },
     verified: {
       type: Boolean,
@@ -28,5 +23,4 @@ const userSchema = mongoose.Schema(
 );
 
 
-
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("GoogleUser", googleUserModel);

@@ -4,6 +4,7 @@ const Tasks = require("../models/taskModel");
 //@route GET /api/contacts
 //@access private
 const getTasks = asyncHandler(async (req, res) => {
+  console.log('yes')
   const tasks = await Tasks.find({ user_id: req.user.id });
   res.status(200).json(tasks);
 });
@@ -12,6 +13,8 @@ const getTasks = asyncHandler(async (req, res) => {
 //@route POST /api/contacts
 //@access private
 const createTask = asyncHandler(async (req, res) => {
+  console.log(req)
+  console.log("dd")
   console.log("The request body is :", req.body);
   const { title, description, completed } = req.body;
   if (!title || !description) {
