@@ -1,3 +1,7 @@
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+
 .register-container {
   display: flex;
   flex-direction: column;
@@ -73,4 +77,14 @@
 
 .login-button:hover {
   background-color: #0056b3;
+}
+
+.Home{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.taskHeading{
+  font-size: 3rem;
 }

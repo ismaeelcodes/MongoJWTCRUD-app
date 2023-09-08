@@ -80,8 +80,8 @@ function App() {
 
   return (
     <div className="Home">
-      <h1>Task Manager</h1>
-      <div>
+      <h1 className='taskHeading'>Order of Agendas</h1>
+      <div className='taskCreateDiv'>
         <h2>Create New Task</h2>
         <input
           type="text"
@@ -99,8 +99,8 @@ function App() {
         />
         <button onClick={createTask}>Create</button>
       </div>
-      <div>
-        <h2>Your Tasks</h2>
+      <div className='allTasks'>
+        <h2 className='allTasksHeading'>Your Tasks</h2>
         <TaskList
           tasks={tasks}
           onUpdate={updateTask}
