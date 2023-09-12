@@ -105,6 +105,7 @@ function App() {
           tasks={tasks}
           onUpdate={updateTask}
           onDelete={deleteTask}
+          
         />
       </div>
     </div>

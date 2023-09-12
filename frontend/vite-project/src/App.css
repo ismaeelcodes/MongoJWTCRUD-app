@@ -88,3 +88,32 @@
 .taskHeading{
   font-size: 3rem;
 }
+
+.taskCreateDiv{
+  display: flex;
+  flex-direction: column;
+}
+
+.taskCreateDiv > input {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.task-list{
+  display: flex;
+}
+
+.allTasks{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.task-list > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  border: 2px solid black;
+  padding: 1rem;
+}
